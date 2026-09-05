@@ -171,6 +171,51 @@
       transform: scale(1.05);
       color: #000;
     }
+
+    /* --- ADAPTACIÓN PARA CELULARES --- */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column; /* Apila todo de arriba hacia abajo */
+      }
+      
+      #left-panel {
+        flex: none;
+        height: 40vh; /* La rosa ocupa el 40% de arriba de la pantalla */
+        width: 100vw;
+      }
+      
+      #right-panel {
+        flex: 1; /* El resto del espacio para letras y reproductor */
+        flex-direction: column; /* Pone las letras arriba del reproductor */
+        width: 100vw;
+      }
+      
+      .lyrics-container {
+        padding: 15px;
+        padding-bottom: 30px; /* Le quitamos el espacio gigante que tenía al fondo */
+      }
+      
+      .lyric-line {
+        font-size: 20px; /* Letras un pelo más pequeñas para que se lean bien */
+      }
+      
+      .player-container {
+        flex: none;
+        border-left: none;
+        border-top: 1px solid #282828; /* Línea de separación arriba en vez de a los lados */
+        padding: 10px;
+      }
+      
+      .album-cover {
+        width: 100px; /* Portada más pequeña para que no estorbe en el cel */
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      
+      .song-title {
+        font-size: 18px;
+      }
+    }
   </style>
 
   <script type="importmap">
