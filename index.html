@@ -172,48 +172,54 @@
       color: #000;
     }
 
-    /* --- ADAPTACIÓN PARA CELULARES --- */
+  /* --- ADAPTACIÓN PARA CELULARES --- */
     @media (max-width: 768px) {
       body {
-        flex-direction: column; /* Apila todo de arriba hacia abajo */
+        flex-direction: column; 
       }
       
       #left-panel {
         flex: none;
-        height: 40vh; /* La rosa ocupa el 40% de arriba de la pantalla */
+        height: 40vh; /* La rosa ocupa el 40% de arriba */
         width: 100vw;
       }
       
       #right-panel {
-        flex: 1; /* El resto del espacio para letras y reproductor */
-        flex-direction: column; /* Pone las letras arriba del reproductor */
+        flex: none;
+        height: 60vh; /* Letras y reproductor ocupan el 60% de abajo */
+        flex-direction: column;
         width: 100vw;
       }
       
       .lyrics-container {
+        flex: 1; /* Toma TODO el espacio que sobre */
         padding: 15px;
-        padding-bottom: 30px; /* Le quitamos el espacio gigante que tenía al fondo */
+        padding-bottom: 20px; 
       }
       
       .lyric-line {
-        font-size: 20px; /* Letras un pelo más pequeñas para que se lean bien */
+        font-size: 18px; /* Reducimos la letra para leer cómodo en vertical */
       }
       
       .player-container {
-        flex: none;
+        flex: none; /* ¡El truco! Evita que el reproductor crezca de más */
         border-left: none;
-        border-top: 1px solid #282828; /* Línea de separación arriba en vez de a los lados */
-        padding: 10px;
+        border-top: 1px solid #282828; 
+        padding: 10px 15px 25px 15px; /* Margen extra abajo por los gestos del cel */
       }
       
       .album-cover {
-        width: 100px; /* Portada más pequeña para que no estorbe en el cel */
-        height: 100px;
+        width: 70px; /* Portada mucho más compacta */
+        height: 70px;
         margin-bottom: 10px;
       }
       
       .song-title {
         font-size: 18px;
+      }
+      
+      .progress-wrapper {
+        margin-bottom: 15px;
       }
     }
   </style>
